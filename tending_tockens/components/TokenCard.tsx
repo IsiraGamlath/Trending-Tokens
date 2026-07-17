@@ -21,8 +21,8 @@ export default function TockenCard({
             </p>
 
             <p className="text-2xl font-semibold mt-4 break-all">
-  ${price < 1 ? price.toPrecision(4) : price.toFixed(2)}
-</p>
+            ${price < 1 ? price.toPrecision(4) : price.toFixed(2)}
+            </p>
             
             <p className={`mt-3 font-semibold ${
                 (change24h ?? 0) >= 0 ? "text-green-400" : "text-red-400"}`}>
