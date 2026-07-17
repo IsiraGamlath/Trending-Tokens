@@ -1,21 +1,15 @@
-export async function getTrendingTokens() {
+import { getTrendingTokens } from "@/lib/solanaTracker";
 
-  const res = await fetch(
-    `${process.env.SOLANA_TRACKER_BASE_URL}/tokens/trending`,
-    {
-      headers: {
-        "x-api-key": process.env.SOLANA_TRACKER_API_KEY!,
-      },
-    }
-  );
+export async function GET() {
+  try {
+    const data = await getTrendingTokens();
 
+    return Response.json(data);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch trending tokens");
+  } catch (error) {
+    return Response.json(
+      { error: "Failed to fetch tokens" },
+      { status: 500 }
+    );
   }
-
-
-  const data = await res.json();
-
-  return data;
 }
