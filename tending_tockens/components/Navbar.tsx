@@ -1,11 +1,13 @@
+import Link from "next/dist/client/link";
+
 export default function Navbar() {
     return (
         <nav>
             <h2> Solana Dashboard </h2>
 
             <div>
-                <a href="/"> Home </a>
-                <a href="/phantom">   Phantom</a>
+                <Link href="/">Home</Link>
+        <Link href="/phantom">Phantom</Link>
             </div>
         </nav>
     );
