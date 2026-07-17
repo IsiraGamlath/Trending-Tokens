@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TockenCard from "@/components/TokenCard";
-import { getTrendingTokens } from "@/lib/solanaTracker";
+import TokenCard from "@/components/TokenCard";
 import { Token } from "@/types/token";
 
 export default function Home() {
@@ -10,30 +9,26 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchTokens() {
+      const res = await fetch("/api/trending");
+      const data = await res.json();
 
-    const res = await fetch("/api/trending");
-
-    const data = await res.json();
-
-    console.log(data);
-
-    setTokens(data);
-
-  }
+      console.log(data);
+      setTokens(data);
+    }
 
     fetchTokens();
-
   }, []);
 
-
   return (
-    <main>
-      <h1>Trending Tokens</h1>
+    <main className="min-h-screen bg-black text-white p-8">
+      <h1 className="text-4xl font-bold text-purple-500 mb-8">
+        Trending Tokens
+      </h1>
 
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {tokens.map((token, index) => (
-          <TockenCard
-             key={`${token.token?.symbol}-${index}`}
+          <TokenCard
+            key={`${token.token?.symbol}-${index}`}
             name={token.token.name}
             symbol={token.token.symbol}
             price={token.pools[0]?.price?.usd ?? 0}

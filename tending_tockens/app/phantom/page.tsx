@@ -48,34 +48,49 @@ export default function PhantomPage() {
 
 
   return (
+  <main className="min-h-screen bg-zinc-950 text-white p-8 flex items-center justify-center">
 
-    <main>
+    <div className="w-full max-w-lg bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-xl">
 
-      <h1>
-        Phantom Wallet
+      <h1 className="text-3xl font-bold text-purple-400 mb-6 text-center">
+        🟣 Phantom Wallet
       </h1>
 
 
-      <button onClick={connectWallet}>
+      <button
+        onClick={connectWallet}
+        className="w-full bg-purple-600 hover:bg-purple-700 transition px-6 py-3 rounded-xl font-semibold"
+      >
         Connect Phantom
       </button>
 
 
       {message && (
-        <p>
-          {message}
-        </p>
+        <div className="mt-6 p-4 rounded-xl bg-zinc-800 border border-zinc-700">
+          <p className="text-zinc-300 text-center">
+            {message}
+          </p>
+        </div>
       )}
 
 
       {wallet && (
-        <p>
-          Public Key: {wallet}
-        </p>
+        <div className="mt-6 p-4 rounded-xl bg-zinc-800 border border-zinc-700">
+
+          <p className="text-sm text-zinc-400 mb-2">
+            Public Key
+          </p>
+
+          <p className="text-sm break-all text-green-400 font-mono">
+            {wallet}
+          </p>
+
+        </div>
       )}
 
-    </main>
+    </div>
 
-  );
+  </main>
+);
 
 }

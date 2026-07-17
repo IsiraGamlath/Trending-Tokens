@@ -1,6 +1,6 @@
 import { Connection, PublicKey } from "@solana/web3.js";
 import { isValidWalletAddress } from "@/lib/validators";
-
+import { getTokenInfo } from "@/lib/solanaTracker";
 
 export async function GET(
   request: Request,
@@ -49,14 +49,47 @@ export async function GET(
         )
       }
     );
+    const tokenList = await Promise.all(
+
+  tokens.value.map(async (item) => {
+
+    const mint =
+      item.account.data.parsed.info.mint;
 
 
-  const tokenList = tokens.value.map((item) => ({
-    mint: item.account.data.parsed.info.mint,
-    amount: item.account.data.parsed.info.tokenAmount.uiAmount
-  }));
+    const amount =
+      item.account.data.parsed.info.tokenAmount.uiAmount;
 
 
+    try {
+
+      const info = await getTokenInfo(mint);
+
+
+      return {
+        mint,
+        amount,
+        name: info.token?.name ?? "Unknown",
+        symbol: info.token?.symbol ?? "Unknown",
+        image: info.token?.image ?? ""
+      };
+
+
+    } catch {
+
+      return {
+        mint,
+        amount,
+        name: "Unknown",
+        symbol: "Unknown",
+        image: ""
+      };
+
+    }
+
+  })
+
+);
   return Response.json({
     address,
     solBalance,

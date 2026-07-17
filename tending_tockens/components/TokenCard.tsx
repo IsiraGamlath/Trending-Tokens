@@ -13,18 +13,19 @@ export default function TockenCard({
 }: TockenCardProps) {
 
     return (
-        <div>
-            <h2> {name} </h2>
+        <div className="rounded-2xl bg-zinc-900 border border-zinc-800 p-6 shadow-lg hover:scale-105 transition">
+            <h2 className="text-xl font-bold"> {name} </h2>
 
-            <p> 
+            <p className="text-zinc-400"> 
                Symbol: {symbol} 
             </p>
 
-            <p>
-                Price: ${price}
-            </p>
+            <p className="text-2xl font-semibold mt-4 break-all">
+  ${price < 1 ? price.toPrecision(4) : price.toFixed(2)}
+</p>
             
-            <p>
+            <p className={`mt-3 font-semibold ${
+                (change24h ?? 0) >= 0 ? "text-green-400" : "text-red-400"}`}>
                 24h Change: {change24h ?? "N/A"}%
             </p>
             
