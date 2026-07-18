@@ -8,7 +8,6 @@ export default function PhantomPage() {
   const [wallet, setWallet] = useState("");
   const [message, setMessage] = useState("");
 
-
   async function connectWallet() {
 
     const provider = (window as any).phantom?.solana;
@@ -52,14 +51,14 @@ export default function PhantomPage() {
 
     <div className="w-full max-w-lg bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-xl">
 
-      <h1 className="text-3xl font-bold text-purple-400 mb-6 text-center">
+      <h1 className="text-3xl font-bold text-primary mb-6 text-center">
         🟣 Phantom Wallet
       </h1>
 
 
       <button
         onClick={connectWallet}
-        className="w-full bg-purple-600 hover:bg-purple-700 transition px-6 py-3 rounded-xl font-semibold"
+        className="w-full bg-primary hover:bg-primary-hover transition px-6 py-3 rounded-xl font-semibold"
       >
         Connect Phantom
       </button>

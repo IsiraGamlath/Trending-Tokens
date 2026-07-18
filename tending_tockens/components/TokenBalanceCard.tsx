@@ -24,7 +24,7 @@ export default function TokenBalanceCard({ token }: TokenBalanceCardProps) {
       )}
 
       <Link href={`/token/${token.mint}`}>
-        <h3 className="text-lg font-semibold text-purple-300 hover:text-purple-400 transition">
+        <h3 className="text-lg font-semibold text-primary hover:text-primary transition">
           {token.name}
         </h3>
       </Link>

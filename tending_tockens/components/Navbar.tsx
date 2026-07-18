@@ -17,7 +17,7 @@ export default function Navbar() {
 
         <Link 
           href="/"
-          className="hover:text-purple-400"
+          className="hover:text-primary"
         >
           Home
         </Link>
@@ -25,14 +25,14 @@ export default function Navbar() {
 
         <Link
           href="/phantom"
-          className="hover:text-purple-400"
+          className="hover:text-primary"
         >
           Phantom
         </Link>
 
         <Link
           href="/wallet"
-          className="hover:text-purple-400"
+          className="hover:text-primary"
         >
           Wallet
         </Link>

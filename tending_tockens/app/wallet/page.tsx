@@ -21,11 +21,10 @@ export default function WalletSearchPage() {
   return (
     <main className="min-h-screen bg-black text-white p-8">
 
-      <h1 className="text-4xl font-bold text-purple-500 mb-8">
+      <h1 className="text-4xl font-bold text-primary mb-8">
         Wallet Lookup
       </h1>
-
-
+   
       <div className="max-w-xl">
 
         <input
@@ -52,8 +51,8 @@ export default function WalletSearchPage() {
             px-6
             py-3
             rounded-lg
-            bg-purple-600
-            hover:bg-purple-700
+            bg-primary
+            hover:bg-primary-hover
           "
         >
           Search Wallet

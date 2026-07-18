@@ -13,7 +13,7 @@ export default async function TokenPage({
     return (
       <main className="min-h-screen bg-zinc-950 text-white p-8 flex items-center justify-center">
         <div className="w-full max-w-3xl bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-xl">
-          <h1 className="text-3xl font-bold text-purple-400 mb-6 text-center">
+          <h1 className="text-3xl font-bold text-primary mb-6 text-center">
             {token?.token?.name || "Unknown Token"}
           </h1>
 
