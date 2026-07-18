@@ -54,7 +54,7 @@ export default function WalletPage({
           <>
             <div className="p-4 rounded-xl bg-zinc-800 border border-zinc-700 mb-6 space-y-2">
               <p className="text-sm text-zinc-400">Address</p>
-              <p className="text-sm break-all text-green-400 font-mono">
+              <p className="text-sm break-all text-red-400 font-mono">
                 {wallet.address}
               </p>
 

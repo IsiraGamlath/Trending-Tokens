@@ -35,7 +35,7 @@ export default function TokenBalanceCard({ token }: TokenBalanceCardProps) {
         Mint: {token.mint}
       </p>
 
-      <p className="text-green-400 font-semibold mt-2">
+      <p className="text-success font-semibold mt-2">
         Amount: {token.amount}
       </p>
     </div>

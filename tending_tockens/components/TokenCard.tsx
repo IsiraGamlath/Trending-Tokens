@@ -25,7 +25,7 @@ export default function TockenCard({
             </p>
             
             <p className={`mt-3 font-semibold ${
-                (change24h ?? 0) >= 0 ? "text-green-400" : "text-red-400"}`}>
+                (change24h ?? 0) >= 0 ? "text-success" : "text-success"}`}>
                 24h Change: {change24h ?? "N/A"}%
             </p>
             

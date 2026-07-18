@@ -44,7 +44,7 @@ export default async function TokenPage({
           <div className="grid gap-3">
             <div className="rounded-xl bg-zinc-800 border border-zinc-700 p-4">
               <p className="text-zinc-400 text-sm">Price</p>
-              <p className="text-green-400 font-semibold">
+              <p className="text-success font-semibold">
                 ${token?.pools?.[0]?.price?.usd ?? "N/A"}
               </p>
             </div>

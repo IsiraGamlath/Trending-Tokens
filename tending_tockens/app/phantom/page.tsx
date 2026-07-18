@@ -80,7 +80,7 @@ export default function PhantomPage() {
             Public Key
           </p>
 
-          <p className="text-sm break-all text-green-400 font-mono">
+          <p className="text-sm break-all text-red-400 font-mono">
             {wallet}
           </p>
 
